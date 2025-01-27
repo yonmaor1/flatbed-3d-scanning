@@ -14,5 +14,8 @@ ECE Capstone Project, Spring 2025
 [Figma](https://www.figma.com/team_invite/redeem/5x660ntAn8yKOq8LIjZn8b) (design and ideation) \
 [Github](https://github.com/yonmaor1/flatbed-3d-scanning)
 
+# References
+[Paper on our methodology](https://www.researchgate.net/publication/281105714_Making_3D_Replicas_Using_a_Flatbed_Scanner_and_a_3D_Printer)
+
 # TODO
 - everything
