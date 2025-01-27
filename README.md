@@ -4,6 +4,9 @@ Using a flatbed scanner to create 3D models
 Made at CMU by Theo Cockrell, Sophia King and Yon Maor \
 ECE Capstone Project, Spring 2025
 
+# Block Diagram
+![Block Diagram](assets/block_diagram.png)
+
 # Links to all our resources
 [Drive](https://drive.google.com/drive/folders/1ced0EoecR5MyE44IGFHTp-g9Kk1cnlny?usp=drive_link)\
 [Overleaf](https://www.overleaf.com/4282792349kjgzvnnsnnzq#f804f3) \
