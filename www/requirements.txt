@@ -1,5 +1,0 @@
-Flask
-Pillow
-numpy
-matplotlib
-scikit-image

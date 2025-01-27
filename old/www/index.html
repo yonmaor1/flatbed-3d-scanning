@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flatbed 3D Scanning</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>Flatbed 3D Scanning</h1>
+    <h3>By <a href="https://yonmaor.com" target="_blank">Yon Maor</a> | <a href="https://github.com/yonmaor1/flatbed-3d-scanning/" target="_blank">GitHub Repo</a> | <a href="https://link.springer.com/chapter/10.1007/978-3-319-09153-2_6#citeas" target="_blank">Paper</a></h3>
+    <div class="container">
+        <div class="column">
+            <h2>Upload Images</h2>
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" name="images" multiple accept="image/*" required>
+                <button type="submit">Upload and Process</button>
+            </form>
+            <div id="uploaded-images" class="grid-container"></div>
+        </div>
+        <div class="column">
+            <h2>Normal Map</h2>
+            <div id="normal-map-container">
+                <div class="loader" id="normal-map-loader" style="display: none;"></div>
+                <p id="normal-map-status" style="display: none;">Computing normal map...</p>
+                <img id="normal-map" src="" alt="Normal Map" style="display: none;">
+            </div>
+        </div>
+        <div class="column">
+            <h2>Download OBJ</h2>
+            <div id="download-container">
+                <div class="loader" id="download-loader" style="display: none;"></div>
+                <p id="download-status" style="display: none;">Constructing surface...</p>
+                <a id="download-link" href="" download="output.obj" style="display: none;">Download OBJ</a>
+            </div>
+        </div>
+    </div>
+    <script src="static/scripts.js"></script>
+</body>
+</html>
