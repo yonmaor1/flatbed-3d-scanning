@@ -15,7 +15,7 @@ ECE Capstone Project, Spring 2025
 [Github](https://github.com/yonmaor1/flatbed-3d-scanning)
 
 # References
-https://www.spiedigitallibrary.org/conference-proceedings-of-spie/0155/1/Photometric-Stereo--A-Reflectance-Map-Technique-For-Determining-Surface/10.1117/12.956740.full
+https://www.cs.ubc.ca/~woodham/papers/Woodham80c.pdf
 https://www.researchgate.net/publication/281105714_Making_3D_Replicas_Using_a_Flatbed_Scanner_and_a_3D_Printer
 
 # TODO
