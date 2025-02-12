@@ -2,10 +2,11 @@
 
 using NAPS2.Images;
 using NAPS2.Images.Gdi;
-using NAPS2.Pdf;
 using NAPS2.Scan;
 
 // Set up the scanning context
+// TODO: Add checks for what platform is running it
+// windows check
 using var scanningContext = new ScanningContext(new GdiImageContext());
 var controller = new ScanController(scanningContext);
 
@@ -18,24 +19,16 @@ var options = new ScanOptions
     Device = devices.First(),
     PaperSource = PaperSource.Feeder,
     PageSize = PageSize.A4,
-    Dpi = 300
+    Dpi = 4800
 };
 
 // Scan and save images
+// send out .png format images
 int i = 1;
 await foreach (var image in controller.Scan(options))
 {
-    image.Save($"page{i++}.jpg");
+    image.Save($"page{i++}.png");
 }
-
-// Scan and save as PDF
-var images = new List<ProcessedImage>();
-await foreach (var image in controller.Scan(options))
-{
-    images.Add(image);
-}
-var pdfExporter = new PdfExporter(scanningContext);
-await pdfExporter.Export("document.pdf", images);
 
 
 Console.WriteLine("Hello, World!");
