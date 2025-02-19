@@ -15,10 +15,10 @@ ECE Capstone Project, Spring 2025
 [Github](https://github.com/yonmaor1/flatbed-3d-scanning)
 
 # References
-https://www.cs.ubc.ca/~woodham/papers/Woodham80c.pdf
-https://www.researchgate.net/publication/281105714_Making_3D_Replicas_Using_a_Flatbed_Scanner_and_a_3D_Printer
-https://dl.acm.org/doi/abs/10.1145/3357236.3395579
-https://kilthub.cmu.edu/articles/thesis/3D_Microscopic_Texture_Interface_in_CAD_Cultivating_Material_Knowledge_for_the_Practiced_Digital_Hand/8234276?file=15351137
+https://www.cs.ubc.ca/~woodham/papers/Woodham80c.pdf \
+https://www.researchgate.net/publication/281105714_Making_3D_Replicas_Using_a_Flatbed_Scanner_and_a_3D_Printer \
+https://dl.acm.org/doi/abs/10.1145/3357236.3395579 \
+https://kilthub.cmu.edu/articles/thesis/3D_Microscopic_Texture_Interface_in_CAD_Cultivating_Material_Knowledge_for_the_Practiced_Digital_Hand/8234276?file=15351137 \
 
 # TODO
 - everything
