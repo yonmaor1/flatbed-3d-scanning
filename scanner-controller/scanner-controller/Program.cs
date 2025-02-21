@@ -12,6 +12,7 @@ using NAPS2.Scan.Exceptions;
 ScanningContext scanningContext;
 if (OperatingSystem.IsWindows() && OperatingSystem.IsWindowsVersionAtLeast(7))
 {
+    Console.WriteLine("Windows");
     scanningContext = new ScanningContext(new WpfImageContext());
 }
 // May have to create separate files for supporting mac or linux?
@@ -52,19 +53,19 @@ var options = new ScanOptions
 };
 
 // get what number scan cycle this is
-int scanCycle = 0;
+int scanID = 0;
 for (int i = 0; i < 1000; i++)
 {
     if (!Directory.Exists($"scans/scan{i}"))
     {
-        scanCycle = i;
+        scanID = i;
         break;
     }
 }
 
 // create new folder in existing scans folder for this scan cycle
-Directory.CreateDirectory("scans/scan" + scanCycle);
-Directory.SetCurrentDirectory("scans/scan" + scanCycle);
+Directory.CreateDirectory("scans/scan" + scanID);
+Directory.SetCurrentDirectory("scans/scan" + scanID);
 
 // Scan and save images
 // send out .png format images
@@ -75,4 +76,4 @@ await foreach (var image in controller.Scan(options))
 }
 
 
-Console.WriteLine("Hello, World!");
+Console.WriteLine("Completed scanning process.");

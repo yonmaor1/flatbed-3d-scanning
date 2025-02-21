@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/scanner-controller.csproj": {}
+    "D:\\University\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\scanner-controller.csproj": {}
   },
   "projects": {
-    "/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/scanner-controller.csproj": {
+    "D:\\University\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\scanner-controller.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/scanner-controller.csproj",
+        "projectUniqueName": "D:\\University\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\scanner-controller.csproj",
         "projectName": "scanner-controller",
-        "projectPath": "/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/scanner-controller.csproj",
-        "packagesPath": "/home/selki/.nuget/packages/",
-        "outputPath": "/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/obj/",
+        "projectPath": "D:\\University\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\scanner-controller.csproj",
+        "packagesPath": "C:\\Users\\selki\\.nuget\\packages\\",
+        "outputPath": "D:\\University\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/selki/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\selki\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -87,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.112/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
