@@ -2,6 +2,96 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "AtkSharp/3.24.24.95": {
+        "type": "package",
+        "dependencies": {
+          "GLibSharp": "3.24.24.95"
+        },
+        "compile": {
+          "lib/net6.0/AtkSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/AtkSharp.dll": {}
+        }
+      },
+      "CairoSharp/3.24.24.95": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CairoSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/CairoSharp.dll": {}
+        }
+      },
+      "Eto.Forms/2.8.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Eto.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Eto.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/_._": {}
+        }
+      },
+      "Eto.Platform.Mac64/2.8.3": {
+        "type": "package",
+        "dependencies": {
+          "Eto.Forms": "2.8.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Eto.Mac64.dll": {},
+          "lib/netstandard2.0/MonoMac.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Eto.Mac64.dll": {},
+          "lib/netstandard2.0/MonoMac.dll": {}
+        },
+        "build": {
+          "build/_._": {}
+        }
+      },
+      "GdkSharp/3.24.24.95": {
+        "type": "package",
+        "dependencies": {
+          "CairoSharp": "3.24.24.95",
+          "GLibSharp": "3.24.24.95",
+          "GioSharp": "3.24.24.95",
+          "PangoSharp": "3.24.24.95"
+        },
+        "compile": {
+          "lib/net6.0/GdkSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/GdkSharp.dll": {}
+        }
+      },
+      "GioSharp/3.24.24.95": {
+        "type": "package",
+        "dependencies": {
+          "GLibSharp": "3.24.24.95"
+        },
+        "compile": {
+          "lib/net6.0/GioSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/GioSharp.dll": {}
+        }
+      },
+      "GLibSharp/3.24.24.95": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/GLibSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/GLibSharp.dll": {}
+        }
+      },
       "Google.Protobuf/3.25.1": {
         "type": "package",
         "compile": {
@@ -40,6 +130,26 @@
         },
         "runtime": {
           "lib/net6.0/GrpcDotNetNamedPipes.dll": {}
+        }
+      },
+      "GtkSharp/3.24.24.95": {
+        "type": "package",
+        "dependencies": {
+          "AtkSharp": "3.24.24.95",
+          "CairoSharp": "3.24.24.95",
+          "GLibSharp": "3.24.24.95",
+          "GdkSharp": "3.24.24.95",
+          "GioSharp": "3.24.24.95",
+          "PangoSharp": "3.24.24.95"
+        },
+        "compile": {
+          "lib/net6.0/GtkSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/GtkSharp.dll": {}
+        },
+        "build": {
+          "build/_._": {}
         }
       },
       "Makaretu.Dns/2.0.1": {
@@ -189,6 +299,32 @@
         },
         "runtime": {
           "lib/net8.0/NAPS2.Images.Gdi.dll": {}
+        }
+      },
+      "NAPS2.Images.Gtk/1.1.4": {
+        "type": "package",
+        "dependencies": {
+          "GtkSharp": "3.24.24.95",
+          "NAPS2.Images": "1.1.4"
+        },
+        "compile": {
+          "lib/net8.0/NAPS2.Images.Gtk.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/NAPS2.Images.Gtk.dll": {}
+        }
+      },
+      "NAPS2.Images.Mac/1.1.4": {
+        "type": "package",
+        "dependencies": {
+          "Eto.Platform.Mac64": "2.8.3",
+          "NAPS2.Images": "1.1.4"
+        },
+        "compile": {
+          "lib/net8.0/NAPS2.Images.Mac.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/NAPS2.Images.Mac.dll": {}
         }
       },
       "NAPS2.Images.Wpf/1.1.4": {
@@ -457,6 +593,19 @@
         },
         "runtime": {
           "lib/net6.0/NAPS2.Wia.dll": {}
+        }
+      },
+      "PangoSharp/3.24.24.95": {
+        "type": "package",
+        "dependencies": {
+          "CairoSharp": "3.24.24.95",
+          "GLibSharp": "3.24.24.95"
+        },
+        "compile": {
+          "lib/net6.0/PangoSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/PangoSharp.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
@@ -1408,6 +1557,120 @@
     }
   },
   "libraries": {
+    "AtkSharp/3.24.24.95": {
+      "sha512": "LnSfsc0y11gfzczZj5bnpwcFkXFZuVTSSd92ML/FcHIM7FU+cAfm1UkAonv5BdwTRhzDbNDE39vihao/k75sUA==",
+      "type": "package",
+      "path": "atksharp/3.24.24.95",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "atksharp.3.24.24.95.nupkg.sha512",
+        "atksharp.nuspec",
+        "lib/net6.0/AtkSharp.dll",
+        "lib/netstandard2.0/AtkSharp.dll"
+      ]
+    },
+    "CairoSharp/3.24.24.95": {
+      "sha512": "EZ9KT3pwVAol35XbZW0Uwdg2LqhDvPnWdhqIrsedhDx+Omnu56hLzxh8mZGqmQvEwJE8Opbda4w9CqDtXbX6Vw==",
+      "type": "package",
+      "path": "cairosharp/3.24.24.95",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cairosharp.3.24.24.95.nupkg.sha512",
+        "cairosharp.nuspec",
+        "lib/net6.0/CairoSharp.dll",
+        "lib/netstandard2.0/CairoSharp.dll"
+      ]
+    },
+    "Eto.Forms/2.8.3": {
+      "sha512": "JlYqTXM9quui0/35H73R4r55ZtDfUA3sOZZuhvkNgzDTXp59DDvXDxZ7lRD6fge+GTumA+5AscmF9SWwgK5FUg==",
+      "type": "package",
+      "path": "eto.forms/2.8.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Eto-LICENSE.txt",
+        "build/Eto.Forms.targets",
+        "eto.forms.2.8.3.nupkg.sha512",
+        "eto.forms.nuspec",
+        "lib/net6.0/Eto.dll",
+        "lib/net6.0/Eto.xml",
+        "lib/netstandard2.0/Eto.dll",
+        "lib/netstandard2.0/Eto.xml",
+        "sdk/Sdk.props",
+        "sdk/Sdk.targets"
+      ]
+    },
+    "Eto.Platform.Mac64/2.8.3": {
+      "sha512": "eo4pGMuzIPzuJTH+NoX6H0mHuMNFyZTEFYpjrt5CanI0Bemj7+4y3pHD6n+Hx2pdkn7yVbxy1pwg4AQO2UzNcQ==",
+      "type": "package",
+      "path": "eto.platform.mac64/2.8.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Eto-LICENSE.txt",
+        "MonoMac-LICENSE.txt",
+        "build/BundleDotNetCore.targets",
+        "build/BundleMono.targets",
+        "build/CodeSign.entitlements",
+        "build/CodeSign.targets",
+        "build/Dmg.background.png",
+        "build/Dmg.targets",
+        "build/Eto.Platform.Mac64.props",
+        "build/Eto.Platform.Mac64.targets",
+        "build/Icon.icns",
+        "build/Info.plist",
+        "build/Launcher64",
+        "build/Notarization.targets",
+        "build/README.txt",
+        "build/RunConfiguration.Default.targets",
+        "build/RunConfiguration.Mac.targets",
+        "eto.platform.mac64.2.8.3.nupkg.sha512",
+        "eto.platform.mac64.nuspec",
+        "lib/netstandard2.0/Eto.Mac64.dll",
+        "lib/netstandard2.0/MonoMac.dll"
+      ]
+    },
+    "GdkSharp/3.24.24.95": {
+      "sha512": "rABpIGkxr8lOdyhEmrKXzjih3z3932kjqUmm5qaQhWVSvu9YepEk3J1FApgnKCW/EWEzlerzxnJArsyOlgMsZQ==",
+      "type": "package",
+      "path": "gdksharp/3.24.24.95",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gdksharp.3.24.24.95.nupkg.sha512",
+        "gdksharp.nuspec",
+        "lib/net6.0/GdkSharp.dll",
+        "lib/netstandard2.0/GdkSharp.dll"
+      ]
+    },
+    "GioSharp/3.24.24.95": {
+      "sha512": "avYEDFlYgbogb+Y7ZhIXQpyJfL83bnPpBKY642YEW9PQ+pRK3qf2k0opvd5oHccXfByj6kAQjmRUSIS0pj19Fg==",
+      "type": "package",
+      "path": "giosharp/3.24.24.95",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "giosharp.3.24.24.95.nupkg.sha512",
+        "giosharp.nuspec",
+        "lib/net6.0/GioSharp.dll",
+        "lib/netstandard2.0/GioSharp.dll"
+      ]
+    },
+    "GLibSharp/3.24.24.95": {
+      "sha512": "1viZRMVjddf2HUCW7WDXT47rHssteHkAOimXQ2/pI8oGrPGNFuuw5MbX8BOIy73hCWVqo7JEMONv3z32OrCoCQ==",
+      "type": "package",
+      "path": "glibsharp/3.24.24.95",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "glibsharp.3.24.24.95.nupkg.sha512",
+        "glibsharp.nuspec",
+        "lib/net6.0/GLibSharp.dll",
+        "lib/netstandard2.0/GLibSharp.dll"
+      ]
+    },
     "Google.Protobuf/3.25.1": {
       "sha512": "Sw9bq4hOD+AaS3RrnmP5IT25cyZ/T1qpM0e8+G+23Nojhv7+ScJFPEAQo1m4EFQWhXoI4FRZDrK+wjHCPw9yxg==",
       "type": "package",
@@ -1467,6 +1730,20 @@
         "lib/net462/GrpcDotNetNamedPipes.dll",
         "lib/net6.0/GrpcDotNetNamedPipes.dll",
         "lib/netstandard2.0/GrpcDotNetNamedPipes.dll"
+      ]
+    },
+    "GtkSharp/3.24.24.95": {
+      "sha512": "RRUY45hAa5gsMcadvVjcLUzMjVtmuHSYTcIwM6j8LNgKhzFFHk69qM1D5ULfGxaWmVjicqNWiFtOtk8WsvPqaQ==",
+      "type": "package",
+      "path": "gtksharp/3.24.24.95",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/GtkSharp.targets",
+        "gtksharp.3.24.24.95.nupkg.sha512",
+        "gtksharp.nuspec",
+        "lib/net6.0/GtkSharp.dll",
+        "lib/netstandard2.0/GtkSharp.dll"
       ]
     },
     "Makaretu.Dns/2.0.1": {
@@ -1732,6 +2009,35 @@
         "lib/netstandard2.0/NAPS2.Images.Gdi.dll",
         "naps2.images.gdi.1.1.4.nupkg.sha512",
         "naps2.images.gdi.nuspec"
+      ]
+    },
+    "NAPS2.Images.Gtk/1.1.4": {
+      "sha512": "VuImJB9MUbiIzBgpSEVcmee0wK3D/u1t1klZQp7y2zYXvJUvpYz7R4Il4tWaEGstLp3xf5vKEikr9ktNaF08lg==",
+      "type": "package",
+      "path": "naps2.images.gtk/1.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net6.0/NAPS2.Images.Gtk.dll",
+        "lib/net8.0/NAPS2.Images.Gtk.dll",
+        "naps2.images.gtk.1.1.4.nupkg.sha512",
+        "naps2.images.gtk.nuspec"
+      ]
+    },
+    "NAPS2.Images.Mac/1.1.4": {
+      "sha512": "dabp4y4qsAneBGc1CVTUl/jzC6Y+Ih9Ju5SG9JrLlOrIL+fUylHxzI4zJBL0s1RpozYALQb41Is/ALRwPl4PMQ==",
+      "type": "package",
+      "path": "naps2.images.mac/1.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net6.0/NAPS2.Images.Mac.dll",
+        "lib/net8.0-macos15.0/NAPS2.Images.Mac.dll",
+        "lib/net8.0/NAPS2.Images.Mac.dll",
+        "naps2.images.mac.1.1.4.nupkg.sha512",
+        "naps2.images.mac.nuspec"
       ]
     },
     "NAPS2.Images.Wpf/1.1.4": {
@@ -2033,6 +2339,19 @@
         "lib/netstandard2.0/NAPS2.Wia.dll",
         "naps2.wia.2.0.3.nupkg.sha512",
         "naps2.wia.nuspec"
+      ]
+    },
+    "PangoSharp/3.24.24.95": {
+      "sha512": "H7JeyEvLsgvsbamGpRgoNtdvzPiGwwsUuoeTobN1C/JRjw1J8Snw0yf2WBr7CKx5GLwbrwpQYOb7N/HD17ME8A==",
+      "type": "package",
+      "path": "pangosharp/3.24.24.95",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/PangoSharp.dll",
+        "lib/netstandard2.0/PangoSharp.dll",
+        "pangosharp.3.24.24.95.nupkg.sha512",
+        "pangosharp.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
@@ -4428,7 +4747,10 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "NAPS2.Images >= 1.1.4",
       "NAPS2.Images.Gdi >= 1.1.4",
+      "NAPS2.Images.Gtk >= 1.1.4",
+      "NAPS2.Images.Mac >= 1.1.4",
       "NAPS2.Images.Wpf >= 1.1.4",
       "NAPS2.Pdfium.Binaries >= 1.1.0",
       "NAPS2.Sdk >= 1.1.4",
@@ -4472,7 +4794,19 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "NAPS2.Images": {
+            "target": "Package",
+            "version": "[1.1.4, )"
+          },
           "NAPS2.Images.Gdi": {
+            "target": "Package",
+            "version": "[1.1.4, )"
+          },
+          "NAPS2.Images.Gtk": {
+            "target": "Package",
+            "version": "[1.1.4, )"
+          },
+          "NAPS2.Images.Mac": {
             "target": "Package",
             "version": "[1.1.4, )"
           },

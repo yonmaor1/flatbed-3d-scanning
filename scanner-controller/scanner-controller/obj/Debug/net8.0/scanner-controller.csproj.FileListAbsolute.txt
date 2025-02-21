@@ -101,3 +101,15 @@
 /mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/NAPS2.Images.Gdi.dll
 /mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/System.Drawing.Common.dll
 /mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll
+/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/AtkSharp.dll
+/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/CairoSharp.dll
+/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/Eto.dll
+/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/Eto.Mac64.dll
+/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/MonoMac.dll
+/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/GdkSharp.dll
+/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/GioSharp.dll
+/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/GLibSharp.dll
+/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/GtkSharp.dll
+/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/NAPS2.Images.Gtk.dll
+/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/NAPS2.Images.Mac.dll
+/mnt/d/University/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net8.0/PangoSharp.dll

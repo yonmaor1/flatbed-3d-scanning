@@ -9,7 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NAPS2.Images" Version="1.1.4" />
     <PackageReference Include="NAPS2.Images.Gdi" Version="1.1.4" />
+    <PackageReference Include="NAPS2.Images.Gtk" Version="1.1.4" />
+    <PackageReference Include="NAPS2.Images.Mac" Version="1.1.4" />
     <PackageReference Include="NAPS2.Images.Wpf" Version="1.1.4" />
     <PackageReference Include="NAPS2.Pdfium.Binaries" Version="1.1.0" />
     <PackageReference Include="NAPS2.Sdk" Version="1.1.4" />
