@@ -7,7 +7,7 @@ ECE Capstone Project, Spring 2025
 # Block Diagram
 ![Block Diagram](assets/block_diagram.png)
 
-# Links to all our resources
+# Links
 [Drive](https://drive.google.com/drive/folders/1ced0EoecR5MyE44IGFHTp-g9Kk1cnlny?usp=drive_link)\
 [Overleaf](https://www.overleaf.com/4282792349kjgzvnnsnnzq#f804f3) \
 [Miro](https://miro.com/app/board/uXjVLqdlKAg=/?share_link_id=63507211204) (block diagrams) \
