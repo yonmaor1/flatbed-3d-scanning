@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {
+    "net6.0": {
       "AtkSharp/3.24.24.95": {
         "type": "package",
         "dependencies": {
@@ -184,12 +184,12 @@
       "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.1": {
         "type": "package",
         "compile": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "related": ".xml"
           }
         },
@@ -203,12 +203,12 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1"
         },
         "compile": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+          "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+          "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {
             "related": ".xml"
           }
         },
@@ -237,12 +237,12 @@
       "Microsoft.Win32.SystemEvents/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
@@ -250,7 +250,7 @@
           "buildTransitive/net6.0/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+          "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -267,10 +267,10 @@
           "System.ValueTuple": "4.5.0"
         },
         "compile": {
-          "lib/net8.0/NAPS2.Escl.dll": {}
+          "lib/net6.0/NAPS2.Escl.dll": {}
         },
         "runtime": {
-          "lib/net8.0/NAPS2.Escl.dll": {}
+          "lib/net6.0/NAPS2.Escl.dll": {}
         }
       },
       "NAPS2.Images/1.1.4": {
@@ -282,10 +282,10 @@
           "ZXing.Net": "0.16.9"
         },
         "compile": {
-          "lib/net8.0/NAPS2.Images.dll": {}
+          "lib/net6.0/NAPS2.Images.dll": {}
         },
         "runtime": {
-          "lib/net8.0/NAPS2.Images.dll": {}
+          "lib/net6.0/NAPS2.Images.dll": {}
         }
       },
       "NAPS2.Images.Gdi/1.1.4": {
@@ -295,10 +295,10 @@
           "System.Drawing.Common": "8.0.7"
         },
         "compile": {
-          "lib/net8.0/NAPS2.Images.Gdi.dll": {}
+          "lib/net6.0/NAPS2.Images.Gdi.dll": {}
         },
         "runtime": {
-          "lib/net8.0/NAPS2.Images.Gdi.dll": {}
+          "lib/net6.0/NAPS2.Images.Gdi.dll": {}
         }
       },
       "NAPS2.Images.Gtk/1.1.4": {
@@ -308,10 +308,10 @@
           "NAPS2.Images": "1.1.4"
         },
         "compile": {
-          "lib/net8.0/NAPS2.Images.Gtk.dll": {}
+          "lib/net6.0/NAPS2.Images.Gtk.dll": {}
         },
         "runtime": {
-          "lib/net8.0/NAPS2.Images.Gtk.dll": {}
+          "lib/net6.0/NAPS2.Images.Gtk.dll": {}
         }
       },
       "NAPS2.Images.Mac/1.1.4": {
@@ -321,10 +321,10 @@
           "NAPS2.Images": "1.1.4"
         },
         "compile": {
-          "lib/net8.0/NAPS2.Images.Mac.dll": {}
+          "lib/net6.0/NAPS2.Images.Mac.dll": {}
         },
         "runtime": {
-          "lib/net8.0/NAPS2.Images.Mac.dll": {}
+          "lib/net6.0/NAPS2.Images.Mac.dll": {}
         }
       },
       "NAPS2.Images.Wpf/1.1.4": {
@@ -347,10 +347,10 @@
           "System.ValueTuple": "4.5.0"
         },
         "compile": {
-          "lib/net8.0/NAPS2.Internals.dll": {}
+          "lib/net6.0/NAPS2.Internals.dll": {}
         },
         "runtime": {
-          "lib/net8.0/NAPS2.Internals.dll": {}
+          "lib/net6.0/NAPS2.Internals.dll": {}
         }
       },
       "NAPS2.Mdns/1.0.1": {
@@ -431,145 +431,145 @@
           "ZXing.Net": "0.16.9"
         },
         "compile": {
-          "lib/net8.0/NAPS2.Sdk.dll": {}
+          "lib/net6.0/NAPS2.Sdk.dll": {}
         },
         "runtime": {
-          "lib/net8.0/NAPS2.Sdk.dll": {}
+          "lib/net6.0/NAPS2.Sdk.dll": {}
         },
         "resource": {
-          "lib/net8.0/af/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/af/NAPS2.Sdk.resources.dll": {
             "locale": "af"
           },
-          "lib/net8.0/ar/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/ar/NAPS2.Sdk.resources.dll": {
             "locale": "ar"
           },
-          "lib/net8.0/bg/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/bg/NAPS2.Sdk.resources.dll": {
             "locale": "bg"
           },
-          "lib/net8.0/bs/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/bs/NAPS2.Sdk.resources.dll": {
             "locale": "bs"
           },
-          "lib/net8.0/ca/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/ca/NAPS2.Sdk.resources.dll": {
             "locale": "ca"
           },
-          "lib/net8.0/cs/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/cs/NAPS2.Sdk.resources.dll": {
             "locale": "cs"
           },
-          "lib/net8.0/da/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/da/NAPS2.Sdk.resources.dll": {
             "locale": "da"
           },
-          "lib/net8.0/de/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/de/NAPS2.Sdk.resources.dll": {
             "locale": "de"
           },
-          "lib/net8.0/el/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/el/NAPS2.Sdk.resources.dll": {
             "locale": "el"
           },
-          "lib/net8.0/es/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/es/NAPS2.Sdk.resources.dll": {
             "locale": "es"
           },
-          "lib/net8.0/et/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/et/NAPS2.Sdk.resources.dll": {
             "locale": "et"
           },
-          "lib/net8.0/fa/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/fa/NAPS2.Sdk.resources.dll": {
             "locale": "fa"
           },
-          "lib/net8.0/fi/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/fi/NAPS2.Sdk.resources.dll": {
             "locale": "fi"
           },
-          "lib/net8.0/fr/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/fr/NAPS2.Sdk.resources.dll": {
             "locale": "fr"
           },
-          "lib/net8.0/he/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/he/NAPS2.Sdk.resources.dll": {
             "locale": "he"
           },
-          "lib/net8.0/hi/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/hi/NAPS2.Sdk.resources.dll": {
             "locale": "hi"
           },
-          "lib/net8.0/hr/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/hr/NAPS2.Sdk.resources.dll": {
             "locale": "hr"
           },
-          "lib/net8.0/hu/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/hu/NAPS2.Sdk.resources.dll": {
             "locale": "hu"
           },
-          "lib/net8.0/id/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/id/NAPS2.Sdk.resources.dll": {
             "locale": "id"
           },
-          "lib/net8.0/it/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/it/NAPS2.Sdk.resources.dll": {
             "locale": "it"
           },
-          "lib/net8.0/ja/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/ja/NAPS2.Sdk.resources.dll": {
             "locale": "ja"
           },
-          "lib/net8.0/ko/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/ko/NAPS2.Sdk.resources.dll": {
             "locale": "ko"
           },
-          "lib/net8.0/lt/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/lt/NAPS2.Sdk.resources.dll": {
             "locale": "lt"
           },
-          "lib/net8.0/lv/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/lv/NAPS2.Sdk.resources.dll": {
             "locale": "lv"
           },
-          "lib/net8.0/nb/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/nb/NAPS2.Sdk.resources.dll": {
             "locale": "nb"
           },
-          "lib/net8.0/nl/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/nl/NAPS2.Sdk.resources.dll": {
             "locale": "nl"
           },
-          "lib/net8.0/nn/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/nn/NAPS2.Sdk.resources.dll": {
             "locale": "nn"
           },
-          "lib/net8.0/pl/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/pl/NAPS2.Sdk.resources.dll": {
             "locale": "pl"
           },
-          "lib/net8.0/pt-BR/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/pt-BR/NAPS2.Sdk.resources.dll": {
             "locale": "pt-BR"
           },
-          "lib/net8.0/pt-PT/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/pt-PT/NAPS2.Sdk.resources.dll": {
             "locale": "pt-PT"
           },
-          "lib/net8.0/ro/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/ro/NAPS2.Sdk.resources.dll": {
             "locale": "ro"
           },
-          "lib/net8.0/ru/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/ru/NAPS2.Sdk.resources.dll": {
             "locale": "ru"
           },
-          "lib/net8.0/si/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/si/NAPS2.Sdk.resources.dll": {
             "locale": "si"
           },
-          "lib/net8.0/sk/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/sk/NAPS2.Sdk.resources.dll": {
             "locale": "sk"
           },
-          "lib/net8.0/sl/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/sl/NAPS2.Sdk.resources.dll": {
             "locale": "sl"
           },
-          "lib/net8.0/sq/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/sq/NAPS2.Sdk.resources.dll": {
             "locale": "sq"
           },
-          "lib/net8.0/sr-CS/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/sr-CS/NAPS2.Sdk.resources.dll": {
             "locale": "sr-CS"
           },
-          "lib/net8.0/sr/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/sr/NAPS2.Sdk.resources.dll": {
             "locale": "sr"
           },
-          "lib/net8.0/sv/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/sv/NAPS2.Sdk.resources.dll": {
             "locale": "sv"
           },
-          "lib/net8.0/th/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/th/NAPS2.Sdk.resources.dll": {
             "locale": "th"
           },
-          "lib/net8.0/tr/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/tr/NAPS2.Sdk.resources.dll": {
             "locale": "tr"
           },
-          "lib/net8.0/uk/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/uk/NAPS2.Sdk.resources.dll": {
             "locale": "uk"
           },
-          "lib/net8.0/vi/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/vi/NAPS2.Sdk.resources.dll": {
             "locale": "vi"
           },
-          "lib/net8.0/zh-CN/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/zh-CN/NAPS2.Sdk.resources.dll": {
             "locale": "zh-CN"
           },
-          "lib/net8.0/zh-TW/NAPS2.Sdk.resources.dll": {
+          "lib/net6.0/zh-TW/NAPS2.Sdk.resources.dll": {
             "locale": "zh-TW"
           }
         }
@@ -852,13 +852,16 @@
       },
       "System.Collections.Immutable/8.0.0": {
         "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
         "compile": {
-          "lib/net8.0/System.Collections.Immutable.dll": {
+          "lib/net6.0/System.Collections.Immutable.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Collections.Immutable.dll": {
+          "lib/net6.0/System.Collections.Immutable.dll": {
             "related": ".xml"
           }
         },
@@ -918,12 +921,12 @@
           "Microsoft.Win32.SystemEvents": "8.0.0"
         },
         "compile": {
-          "lib/net8.0/System.Drawing.Common.dll": {
+          "lib/net6.0/System.Drawing.Common.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Drawing.Common.dll": {
+          "lib/net6.0/System.Drawing.Common.dll": {
             "related": ".pdb;.xml"
           }
         },
@@ -1157,12 +1160,12 @@
       "System.Resources.Extensions/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net8.0/System.Resources.Extensions.dll": {
+          "lib/net6.0/System.Resources.Extensions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Resources.Extensions.dll": {
+          "lib/net6.0/System.Resources.Extensions.dll": {
             "related": ".xml"
           }
         },
@@ -1195,6 +1198,22 @@
           "ref/netstandard1.5/System.Runtime.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
       "System.Runtime.Extensions/4.3.0": {
@@ -1519,12 +1538,12 @@
       "System.Threading.Tasks.Dataflow/8.0.1": {
         "type": "package",
         "compile": {
-          "lib/net8.0/System.Threading.Tasks.Dataflow.dll": {
+          "lib/net6.0/System.Threading.Tasks.Dataflow.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net8.0/System.Threading.Tasks.Dataflow.dll": {
+          "lib/net6.0/System.Threading.Tasks.Dataflow.dll": {
             "related": ".xml"
           }
         },
@@ -1544,12 +1563,12 @@
       "ZXing.Net/0.16.9": {
         "type": "package",
         "compile": {
-          "lib/net7.0/zxing.dll": {
+          "lib/net6.0/zxing.dll": {
             "related": ".XML"
           }
         },
         "runtime": {
-          "lib/net7.0/zxing.dll": {
+          "lib/net6.0/zxing.dll": {
             "related": ".XML"
           }
         }
@@ -3867,6 +3886,31 @@
         "system.runtime.nuspec"
       ]
     },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "sha512": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Runtime.Extensions/4.3.0": {
       "sha512": "guW0uK0fn5fcJJ1tJVXYd7/1h5F+pea1r7FLSOz/f8vPEqbR2ZAknuRDvTQ8PzAilDveOxNjSfr0CHfIQfFk8g==",
       "type": "package",
@@ -4746,7 +4790,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0": [
+    "net6.0": [
       "NAPS2.Images >= 1.1.4",
       "NAPS2.Images.Gdi >= 1.1.4",
       "NAPS2.Images.Gtk >= 1.1.4",
@@ -4763,24 +4807,24 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\University\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\scanner-controller.csproj",
+      "projectUniqueName": "C:\\Users\\selki\\OneDrive\\Desktop\\ExtraneousFiles\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\scanner-controller.csproj",
       "projectName": "scanner-controller",
-      "projectPath": "D:\\University\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\scanner-controller.csproj",
+      "projectPath": "C:\\Users\\selki\\OneDrive\\Desktop\\ExtraneousFiles\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\scanner-controller.csproj",
       "packagesPath": "C:\\Users\\selki\\.nuget\\packages\\",
-      "outputPath": "D:\\University\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\obj\\",
+      "outputPath": "C:\\Users\\selki\\OneDrive\\Desktop\\ExtraneousFiles\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\selki\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net8.0"
+        "net6.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "projectReferences": {}
         }
       },
@@ -4796,8 +4840,8 @@
       }
     },
     "frameworks": {
-      "net8.0": {
-        "targetAlias": "net8.0",
+      "net6.0": {
+        "targetAlias": "net6.0",
         "dependencies": {
           "NAPS2.Images": {
             "target": "Package",
@@ -4843,12 +4887,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.36, 6.0.36]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.36, 6.0.36]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.36, 6.0.36]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.36, 6.0.36]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -4857,10 +4919,10 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'NAPS2.Images.Wpf 1.1.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'NAPS2.Images.Wpf 1.1.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "NAPS2.Images.Wpf",
       "targetGraphs": [
-        "net8.0"
+        "net6.0"
       ]
     }
   ]

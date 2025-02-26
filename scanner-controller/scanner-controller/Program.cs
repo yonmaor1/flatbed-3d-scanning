@@ -6,6 +6,8 @@ using NAPS2.Images.Gtk;
 using NAPS2.Scan;
 using NAPS2.Images;
 using NAPS2.Scan.Exceptions;
+using Gtk;
+
 
 // Set up the scanning context
 // windows check
@@ -47,33 +49,40 @@ if (devices.Count == 0)
 var options = new ScanOptions
 {
     Device = devices.First(),
-    PaperSource = PaperSource.Feeder,
+    PaperSource = PaperSource.Flatbed,
     PageSize = PageSize.A4,
-    Dpi = 4800
+    Dpi = 150,
 };
 
+// ScanDevice device = (await controller.GetDeviceList()).First();
+//var options = new ScanOptions { Device = device };
+
 // get what number scan cycle this is
-int scanID = 0;
-for (int i = 0; i < 1000; i++)
-{
-    if (!Directory.Exists($"scans/scan{i}"))
-    {
-        scanID = i;
-        break;
-    }
-}
+// int scanID = 0;
+// for (int i = 0; i < 1000; i++)
+// {
+//     if (!Directory.Exists($"scans/scan{i}"))
+//     {
+//         scanID = i;
+//         break;
+//     }
+// }
+
+// Console.WriteLine(scanID);
 
 // create new folder in existing scans folder for this scan cycle
-Directory.CreateDirectory("scans/scan" + scanID);
-Directory.SetCurrentDirectory("scans/scan" + scanID);
+// Directory.CreateDirectory("scans/scan" + scanID);
+// Directory.SetCurrentDirectory("scans/scan" + scanID);
 
 // Scan and save images
 // send out .png format images
 int scanNumber = 1;
+
+// scan and save images allowing up to a minute for each scan
 await foreach (var image in controller.Scan(options))
 {
     image.Save($"scanPage{scanNumber++}.png");
+    Console.WriteLine($"Saved scanPage{scanNumber - 1}.png");
 }
-
 
 Console.WriteLine("Completed scanning process.");
