@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("scanner-controller")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74d35b5ab192ecaf9393add4b1583a1fb23a15ed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b55eb7f4b7228a91d719ae66b043c445de8e5c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("scanner-controller")]
 [assembly: System.Reflection.AssemblyTitleAttribute("scanner-controller")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

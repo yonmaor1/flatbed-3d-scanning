@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="9.0.2" />
     <PackageReference Include="NAPS2.Images" Version="1.1.4" />
     <PackageReference Include="NAPS2.Images.Gdi" Version="1.1.4" />
     <PackageReference Include="NAPS2.Images.Gtk" Version="1.1.4" />
