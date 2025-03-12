@@ -4,3 +4,5 @@ ignore*
 depth_from_normals
 978-3-319-09153-2_6.pdf
 *.obj
+scans
+*.png
