@@ -5,7 +5,6 @@ using NAPS2.Images.Mac;
 using NAPS2.Images.Gtk;
 using NAPS2.Scan;
 using NAPS2.Images;
-using NAPS2.Scan.Exceptions;
 
 ScanningContext scanningContext;
 
@@ -55,25 +54,36 @@ var options = new ScanOptions
 int scanID = 0;
 for (int i = 0; i < 50; i++)
 {
+    // if scan directory does not exist, break
     if (!Directory.Exists($"scans/scan{i}"))
     {
-        scanID = i;
+        break;
+    }
+    // if scan directory exists, update
+    scanID = i;
+}
+
+// go to correct scan directory
+Directory.SetCurrentDirectory("scans/scan" + scanID);
+
+// find scan number
+int scanNumber = 0;
+for (int i = 0; i < 50; i++)
+{
+    // if scan page does not exist, update and break
+    if (!File.Exists($"scanPage{i}.png"))
+    {
+        scanNumber = i;
         break;
     }
 }
-
-// create new folder in existing scans folder for this scan cycle
-Directory.CreateDirectory("scans/scan" + scanID);
-Directory.SetCurrentDirectory("scans/scan" + scanID);
-
-int scanNumber = 0;
 
 // scan and save images allowing up to a minute for each scan
 await foreach (var image in controller.Scan(options))
 {
     image.Save($"scanPage{scanNumber}.png"); // save scan as png
     Console.WriteLine($"Saved scanPage{scanNumber}.png"); // confirmation output
-    scanNumber++; // increment scan number
+    scanNumber++; // increment scan number in case multiple scans are done
 }
 
 Console.WriteLine("Completed scanning process.");

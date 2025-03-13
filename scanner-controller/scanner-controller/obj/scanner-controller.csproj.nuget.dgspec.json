@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\selki\\OneDrive\\Desktop\\ExtraneousFiles\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\scanner-controller.csproj": {}
+    "/mnt/c/Users/selki/OneDrive/Desktop/ExtraneousFiles/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/scanner-controller.csproj": {}
   },
   "projects": {
-    "C:\\Users\\selki\\OneDrive\\Desktop\\ExtraneousFiles\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\scanner-controller.csproj": {
+    "/mnt/c/Users/selki/OneDrive/Desktop/ExtraneousFiles/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/scanner-controller.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\selki\\OneDrive\\Desktop\\ExtraneousFiles\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\scanner-controller.csproj",
+        "projectUniqueName": "/mnt/c/Users/selki/OneDrive/Desktop/ExtraneousFiles/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/scanner-controller.csproj",
         "projectName": "scanner-controller",
-        "projectPath": "C:\\Users\\selki\\OneDrive\\Desktop\\ExtraneousFiles\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\scanner-controller.csproj",
-        "packagesPath": "C:\\Users\\selki\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\selki\\OneDrive\\Desktop\\ExtraneousFiles\\18-500\\flatbed-3d-scanning\\scanner-controller\\scanner-controller\\obj\\",
+        "projectPath": "/mnt/c/Users/selki/OneDrive/Desktop/ExtraneousFiles/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/scanner-controller.csproj",
+        "packagesPath": "/home/selki/.nuget/packages/",
+        "outputPath": "/mnt/c/Users/selki/OneDrive/Desktop/ExtraneousFiles/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\selki\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/selki/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -96,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.112/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
