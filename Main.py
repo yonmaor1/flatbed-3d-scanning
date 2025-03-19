@@ -17,7 +17,7 @@ def run_scan(num):
             scanID += 1
 
     # create new scan folder
-    os.mkdir("scan" + str(scanID))
+    os.mkdir("scans/scan" + str(scanID))
 
     # loop through number of scans requested
     for i in range(num):
