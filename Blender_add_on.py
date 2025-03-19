@@ -4,6 +4,7 @@ bl_info = {
     "category": "Object",
 }
 
+from Main import run_scan
 import bpy
 
 
@@ -15,10 +16,11 @@ class ObjectFlatbed3DScan(bpy.types.Operator):
 
     def execute(self, context):
         # Sample code
-        # TODO: Call Main.py file in here
-        scene = context.scene
-        for obj in scene.objects:
-            obj.location.x += 1.0
+        # scene = context.scene
+        # for obj in scene.objects:
+        #     obj.location.x += 1.0
+
+        run_scan(1)
 
         return {'FINISHED'}            # Lets Blender know the operator finished successfully.
 
