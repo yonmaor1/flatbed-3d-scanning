@@ -1,6 +1,6 @@
 import os
-import time
 from serial_proto import write_read
+import serial
 
 
 def run_scan(num):
@@ -12,12 +12,15 @@ def run_scan(num):
 
     # find next num for scan folder
     scanID = 0
-    for folder in os.listdir():
+    for folder in os.listdir("scans"):
         if folder.startswith("scan"):
             scanID += 1
 
     # create new scan folder
     os.mkdir("scans/scan" + str(scanID))
+
+    # configure port for microcontroller
+    esp = serial.Serial(port='COM3', baudrate=9600, timeout=0.1)
 
     # loop through number of scans requested
     for i in range(num):
@@ -31,7 +34,7 @@ def run_scan(num):
         print("Scan", i+1, "of", num, "complete.")
 
         # TODO: implement try catch
-        write_read(1)
+        write_read(1, esp)
         print("Finished rotation")
 
     print("Scanning process complete.")
