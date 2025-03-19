@@ -2,7 +2,10 @@ import os
 from serial_proto import write_read
 import serial
 
+# TODO: implement try catch and 0 if unsuccessful
 
+# input: num is the number of rotations/scans to be performed
+# output: 1 if successful, 0 if unsuccessful
 def run_scan(num):
 
     print("Starting scanning process...")
@@ -38,3 +41,5 @@ def run_scan(num):
         print("Finished rotation")
 
     print("Scanning process complete.")
+
+    return 1

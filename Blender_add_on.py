@@ -20,9 +20,14 @@ class ObjectFlatbed3DScan(bpy.types.Operator):
         # for obj in scene.objects:
         #     obj.location.x += 1.0
 
-        run_scan(1)
+        result = run_scan(1)
 
-        return {'FINISHED'}            # Lets Blender know the operator finished successfully.
+        if result == 1:
+            print("Scan successful.")
+            return {'FINISHED'}        # Lets Blender know the operator finished successfully.
+        else:
+            print("Scan unsuccessful.")
+            return {'CANCELLED'}       # Lets Blender know the operator was cancelled.
 
 
 def menu_func(self, context):
