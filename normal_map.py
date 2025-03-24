@@ -8,9 +8,9 @@ print("Normal map generation")
 
 ALPHA = math.pi/6
 
-parser = argparse.ArgumentParser(description="Align images based on a reference pattern.")
+parser = argparse.ArgumentParser(description="Create a normal map from a set of scanned images")
 parser.add_argument('-i', '--in_dir', type=str, required=True, help='Directory where the input images are located')
-parser.add_argument('-o', '--out', type=str, required=True, help='Directory where the output images will be saved')
+parser.add_argument('-o', '--out', type=str, required=True, help='Directory where the normal map will be saved')
 args = parser.parse_args()
 in_dir = args.in_dir
 
