@@ -8,6 +8,8 @@ using NAPS2.Images;
 
 ScanningContext scanningContext;
 
+Console.WriteLine("Starting...");
+
 // windows check
 if (OperatingSystem.IsWindows() && OperatingSystem.IsWindowsVersionAtLeast(7))
 {
