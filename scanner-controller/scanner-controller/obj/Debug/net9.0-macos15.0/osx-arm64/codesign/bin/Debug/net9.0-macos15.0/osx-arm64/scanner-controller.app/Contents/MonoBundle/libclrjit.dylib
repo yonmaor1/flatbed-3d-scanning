@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - /Users/yon/Desktop/flatbed-3d-scanning/scanner-controller/scanner-controller/bin/Debug/net9.0-macos15.0/osx-arm64/scanner-controller.app/Contents/MonoBundle/libclrjit.dylib
