@@ -24,7 +24,7 @@ class ObjectFlatbed3DScan(bpy.types.Operator):
         
         # move to scanner controller directory
         # TODO: add option to change scan directory
-        os.chdir("C:Users/selki/OneDrive/Desktop/ExtraneousFiles/18-500/flatbed-3d-scanning")
+        os.chdir("C:/Users/selki/OneDrive/Desktop/ExtraneousFiles/18-500/flatbed-3d-scanning")
 
         # call Main.py
         print("Running Main.py")

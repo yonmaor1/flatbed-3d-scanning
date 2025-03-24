@@ -24,6 +24,7 @@ def run_scan(num):
     os.mkdir("scans/scan" + str(scanID))
 
     # configure port for microcontroller
+    # TODO: add option to change/find port
     esp = serial.Serial(port='COM14', baudrate=9600, timeout=0.1)
 
     # loop through number of scans requested
