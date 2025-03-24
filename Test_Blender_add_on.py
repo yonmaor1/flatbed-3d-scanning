@@ -41,7 +41,6 @@ def register():
     if kc:
         km = wm.keyconfigs.addon.keymaps.new(name='Object Mode', space_type='EMPTY')
         kmi = km.keymap_items.new(ObjectCursorArray.bl_idname, 'T', 'PRESS', ctrl=True, shift=True)
-        kmi.properties.total = 4
         addon_keymaps.append((km, kmi))
 
 def unregister():

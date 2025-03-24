@@ -47,7 +47,7 @@ var options = new ScanOptions
     Device = devices.First(),
     PaperSource = PaperSource.Flatbed,
     PageSize = PageSize.A4,
-    Dpi = 900,
+    Dpi = 100,
 };
 
 // get what number scan cycle this is

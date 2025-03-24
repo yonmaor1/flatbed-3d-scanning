@@ -4,7 +4,6 @@ bl_info = {
     "category": "Object",
 }
 
-from Main import run_scan
 import bpy
 
 
@@ -20,14 +19,22 @@ class ObjectFlatbed3DScan(bpy.types.Operator):
         # for obj in scene.objects:
         #     obj.location.x += 1.0
 
-        result = run_scan(1)
+        # run Main.py from the command line
+        import os
+        
+        # move to scanner controller directory
+        # TODO: add option to change scan directory
+        os.chdir("C:Users/selki/OneDrive/Desktop/ExtraneousFiles/18-500/flatbed-3d-scanning")
 
-        if result == 1:
-            print("Scan successful.")
-            return {'FINISHED'}        # Lets Blender know the operator finished successfully.
-        else:
-            print("Scan unsuccessful.")
-            return {'CANCELLED'}       # Lets Blender know the operator was cancelled.
+        # call Main.py
+        print("Running Main.py")
+        os.system("python Main.py")
+
+        print("Scan successful.")
+        return {'FINISHED'}        # Lets Blender know the operator finished successfully.
+        # else:
+        #     print("Scan unsuccessful.")
+        #     return {'CANCELLED'}       # Lets Blender know the operator was cancelled.
 
 
 def menu_func(self, context):
@@ -65,3 +72,21 @@ def unregister():
 
 if __name__ == "__main__":
     register()
+
+# TODO: Update this to allow user to change scan directory
+class ScanPreferences(bpy.types.AddonPreferences):
+    bl_idname = __name__
+    scan_path: bpy.props.StringProperty
+
+    scan_path = bpy.props.StringProperty(
+        name="Scanner Directory",
+        subtype='DIR_PATH',
+        default="/mnt/c/Users/selki/OneDrive/Desktop/ExtraneousFiles/18-500/flatbed-3d-scanning"
+    )
+
+    def draw(self, context):
+        layout = self.layout
+        layout.prop(self, "scan_path")
+
+def get_scan_path():
+    return bpy.context.preferences.addons[__name__].preferences.scan_path
