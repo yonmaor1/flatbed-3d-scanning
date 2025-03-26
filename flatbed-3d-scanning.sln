@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scanner-controller", "scanner-controller", "{C24BFB4E-758B-5989-CB38-7C305FA5BBDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scanner-controller", "scanner-controller\scanner-controller\scanner-controller.csproj", "{CDCBFAD7-D7E9-3E87-DE0D-FFA2440B299C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDCBFAD7-D7E9-3E87-DE0D-FFA2440B299C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDCBFAD7-D7E9-3E87-DE0D-FFA2440B299C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDCBFAD7-D7E9-3E87-DE0D-FFA2440B299C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDCBFAD7-D7E9-3E87-DE0D-FFA2440B299C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CDCBFAD7-D7E9-3E87-DE0D-FFA2440B299C} = {C24BFB4E-758B-5989-CB38-7C305FA5BBDC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5CB48B3-49C9-4B32-A0D7-E4C0FF3F94B5}
+	EndGlobalSection
+EndGlobal
