@@ -1,10 +1,12 @@
 .DS_Store
-venv
+venv/
 ignore*
-depth_from_normals
+depth_from_normals/
 978-3-319-09153-2_6.pdf
 *.obj
 scans
 *.png
 scanner-controller/scanner-controller/bin
 scanner-controller/scanner-controller/obj
+bin/
+obj/
