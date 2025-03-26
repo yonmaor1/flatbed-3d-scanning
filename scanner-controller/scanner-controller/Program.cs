@@ -73,7 +73,8 @@ for (int i = 0; i < 50; i++)
     // if scan page does not exist, update and break
     if (!File.Exists($"scanPage{i}.png"))
     {
-        scanNumber = i;
+        // name for angle
+        scanNumber = i * 90;
         break;
     }
 }
@@ -81,7 +82,7 @@ for (int i = 0; i < 50; i++)
 // scan and save images allowing up to a minute for each scan
 await foreach (var image in controller.Scan(options))
 {
-    image.Save($"scanPage{scanNumber}.png"); // save scan as png
+    image.Save($"scanPage_{scanNumber}.png"); // save scan as png
     Console.WriteLine($"Saved scanPage{scanNumber}.png"); // confirmation output
     scanNumber++; // increment scan number in case multiple scans are done
 }
