@@ -11,7 +11,6 @@ ScanningContext scanningContext;
 // windows check
 if (OperatingSystem.IsWindows() && OperatingSystem.IsWindowsVersionAtLeast(7))
 {
-    Console.WriteLine("Windows");
     scanningContext = new ScanningContext(new GdiImageContext());
 }
 // else if mac, set it up
@@ -23,7 +22,6 @@ else if (OperatingSystem.IsMacOS())
 // else if linux, set it up
 else if (OperatingSystem.IsLinux())
 {
-    Console.WriteLine("Linux");
     scanningContext = new ScanningContext(new GtkImageContext());
 }
 else 
@@ -54,12 +52,11 @@ var options = new ScanOptions
 int scanID = 0;
 for (int i = 0; i < 50; i++)
 {
-    // if scan directory does not exist, break
-    if (!Directory.Exists($"scans/scan{i}"))
+    // if doesn't exist, break
+    if (!Directory.Exists("scans/scan" + i))
     {
         break;
     }
-    // if scan directory exists, update
     scanID = i;
 }
 
@@ -71,7 +68,7 @@ int scanNumber = 0;
 for (int i = 0; i < 50; i++)
 {
     // if scan page does not exist, update and break
-    if (!File.Exists($"scanPage{i}.png"))
+    if (!File.Exists($"scanPage_{i*90}.png"))
     {
         // name for angle
         scanNumber = i * 90;
