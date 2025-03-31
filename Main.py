@@ -48,6 +48,8 @@ def run_scan(num):
         write_read('e', esp)
         print("Finished rotation")
 
+    time.sleep(0.1)
+    write_read('b', esp) #rotate back
     print("Scanning process complete.")
 
     # create normal map
