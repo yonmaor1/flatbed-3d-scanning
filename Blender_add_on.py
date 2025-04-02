@@ -7,45 +7,64 @@ bl_info = {
 import bpy
 
 
-class ObjectFlatbed3DScan(bpy.types.Operator):
+class WMFlatbed3DScan(bpy.types.Operator):
     """Object Flatbed 3D Scan"""
-    bl_idname = "object.flatbed_3d_scan"
+    bl_idname = "wm.flatbed_3d_scan"
     bl_label = "Flatbed 3D Scan"
     bl_options = {'REGISTER', 'UNDO'}
 
-    def execute(self, context):
-        # Sample code
-        # scene = context.scene
-        # for obj in scene.objects:
-        #     obj.location.x += 1.0
+    # path variable
+    path: bpy.props.StringProperty(
+        name="Scan Directory",
+        description="Directory that contains Main.py",
+        default="//",
+        maxlen=1024,
+        subtype='DIR_PATH',
+    )
 
+    # scan number variable
+    scan_number: bpy.props.IntProperty(
+        name="Number of Scans",
+        description="Number of scans and rotations",
+        default=4,
+        min=3,
+        max=12,
+    )
+
+    def execute(self, context):
         # run Main.py from the command line
         import os
         
-        # move to scanner controller directory
-        # TODO: add option to change scan directory
-        os.chdir("C:/Users/selki/OneDrive/Desktop/ExtraneousFiles/18-500/flatbed-3d-scanning")
+        # move to configured Main.py directory
+        os.chdir(self.path)
 
         # call Main.py
         print("Running Main.py")
-        os.system("python Main.py")
+        os.system("python Main.py " + str(self.scan_number) + " " + self.path)
 
         print("Scan successful.")
+
         return {'FINISHED'}        # Lets Blender know the operator finished successfully.
         # else:
         #     print("Scan unsuccessful.")
         #     return {'CANCELLED'}       # Lets Blender know the operator was cancelled.
 
+    def invoke(self, context, event):
+        # This is called when the operator is invoked.
+        # It allows you to set up the operator's properties before executing it.
+        # Brings up the dialogue box window
+        return context.window_manager.invoke_props_dialog(self)
+
 
 def menu_func(self, context):
-    self.layout.operator(ObjectFlatbed3DScan.bl_idname)
+    self.layout.operator(WMFlatbed3DScan.bl_idname)
 
 # store keymaps here to access after registration
 addon_keymaps = []
 
 
 def register():
-    bpy.utils.register_class(ObjectFlatbed3DScan)
+    bpy.utils.register_class(WMFlatbed3DScan)
     bpy.types.VIEW3D_MT_object.append(menu_func)
 
     # handle the keymap
@@ -55,7 +74,7 @@ def register():
     kc = wm.keyconfigs.addon
     if kc:
         km = wm.keyconfigs.addon.keymaps.new(name='Object Mode', space_type='EMPTY')
-        kmi = km.keymap_items.new(ObjectFlatbed3DScan.bl_idname, 'T', 'PRESS', ctrl=True, shift=True)
+        kmi = km.keymap_items.new(WMFlatbed3DScan.bl_idname, 'T', 'PRESS', ctrl=True, shift=True)
         addon_keymaps.append((km, kmi))
 
 def unregister():
@@ -66,27 +85,11 @@ def unregister():
         km.keymap_items.remove(kmi)
     addon_keymaps.clear()
 
-    bpy.utils.unregister_class(ObjectFlatbed3DScan)
     bpy.types.VIEW3D_MT_object.remove(menu_func)
+    bpy.utils.unregister_class(WMFlatbed3DScan)
 
 
 if __name__ == "__main__":
     register()
 
-# TODO: Update this to allow user to change scan directory
-class ScanPreferences(bpy.types.AddonPreferences):
-    bl_idname = __name__
-    scan_path: bpy.props.StringProperty
-
-    scan_path = bpy.props.StringProperty(
-        name="Scanner Directory",
-        subtype='DIR_PATH',
-        default="/mnt/c/Users/selki/OneDrive/Desktop/ExtraneousFiles/18-500/flatbed-3d-scanning"
-    )
-
-    def draw(self, context):
-        layout = self.layout
-        layout.prop(self, "scan_path")
-
-def get_scan_path():
-    return bpy.context.preferences.addons[__name__].preferences.scan_path
+    bpy.ops.wm.flatbed_3d_scan('INVOKE_DEFAULT')

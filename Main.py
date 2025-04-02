@@ -1,15 +1,14 @@
 import os
+import sys
 from serial_proto import write_read
 import serial
 import time
 
 # TODO: implement try catch and 0 if unsuccessful
 
-path = "C:/Users/selki/OneDrive/Desktop/ExtraneousFiles/18-500/flatbed-3d-scanning/scanner-controller/scanner-controller"
-
 # input: num is the number of rotations/scans to be performed
 # output: 1 if successful, 0 if unsuccessful
-def run_scan(num):
+def run_scan(num, path):
 
     print("Starting scanning process...")
 
@@ -18,6 +17,8 @@ def run_scan(num):
 
     # find next num for scan folder
     scanID = 0
+
+    # TODO: create scan directory if can't find it
     for folder in os.listdir("scans"):
         if folder.startswith("scan"):
             scanID += 1
@@ -48,8 +49,9 @@ def run_scan(num):
         write_read('e', esp)
         print("Finished rotation")
 
-    time.sleep(0.1)
-    write_read('b', esp) #rotate back
+    time.sleep(0.5)
+    write_read('b', esp) # rotate back
+    time.sleep(0.5)
     print("Scanning process complete.")
 
     # create normal map
@@ -59,7 +61,7 @@ def run_scan(num):
     # print("Current directory:", os.getcwd())
     # os.chdir(path + "/scans/scan" + str(scanID))
 
-    os.chdir("C:/Users/selki/OneDrive/Desktop/ExtraneousFiles/18-500/flatbed-3d-scanning")
+    os.chdir(path)
 
     # call normal_map.py from the command line
     print("Running normal_map.py")
@@ -67,4 +69,7 @@ def run_scan(num):
 
     return 1
 
-run_scan(4)
+if __name__ == "__main__":
+  num = int(sys.argv[1])
+  path = sys.argv[2]
+  run_scan(num, path)
