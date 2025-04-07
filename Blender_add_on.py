@@ -31,16 +31,25 @@ class WMFlatbed3DScan(bpy.types.Operator):
         max=12,
     )
 
+    dpi: bpy.props.IntProperty(
+        name="DPI",
+        description="DPI of the scan",
+        default=300,
+        min=100,
+        max=4000,
+    )
+
     def execute(self, context):
         # run Main.py from the command line
         import os
+        import subprocess
         
         # move to configured Main.py directory
         os.chdir(self.path)
 
         # call Main.py
         print("Running Main.py")
-        os.system("python Main.py " + str(self.scan_number) + " " + self.path)
+        subprocess.run("python Main.py " + str(self.scan_number) + " " + self.path + " " + str(self.dpi))
 
         print("Scan successful.")
 

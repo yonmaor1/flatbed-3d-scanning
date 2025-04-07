@@ -1,4 +1,5 @@
 import os
+import subprocess
 import sys
 from serial_proto import write_read
 import serial
@@ -8,7 +9,7 @@ import time
 
 # input: num is the number of rotations/scans to be performed
 # output: 1 if successful, 0 if unsuccessful
-def run_scan(num, path):
+def run_scan(num, path, dpi):
 
     print("Starting scanning process...")
 
@@ -18,10 +19,14 @@ def run_scan(num, path):
     # find next num for scan folder
     scanID = 0
 
-    # TODO: create scan directory if can't find it
-    for folder in os.listdir("scans"):
-        if folder.startswith("scan"):
-            scanID += 1
+    # create scan directory if can't find it
+    try:
+        for folder in os.listdir("scans"):
+            if folder.startswith("scan"):
+                scanID += 1
+    except:
+        print("Scans folder not found. Creating new scans folder.")
+        os.mkdir("scans")
 
     # create new scan folder
     os.mkdir("scans/scan" + str(scanID))
@@ -36,7 +41,7 @@ def run_scan(num, path):
         # TODO: implement try catch
         # call command line dotnet run
         print("Running dotnet")
-        os.system("dotnet run")
+        subprocess.run(["dotnet", "run", "--", str(dpi)], check=True)
         print("Finished dotnet")
 
         print("Scan", i+1, "of", num, "complete.")
@@ -56,11 +61,6 @@ def run_scan(num, path):
 
     # create normal map
     # go to this scan folder
-    # TODO: Update with user-configured path
-    # print directory
-    # print("Current directory:", os.getcwd())
-    # os.chdir(path + "/scans/scan" + str(scanID))
-
     os.chdir(path)
 
     # call normal_map.py from the command line
@@ -72,4 +72,5 @@ def run_scan(num, path):
 if __name__ == "__main__":
   num = int(sys.argv[1])
   path = sys.argv[2]
-  run_scan(num, path)
+  dpi = int(sys.argv[3])
+  run_scan(num, path, dpi)
