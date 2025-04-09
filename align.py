@@ -1,8 +1,16 @@
 import cv2
 import numpy as np
+from PIL import Image
 import os
 import sys
 
+
+def get_image_dpi(image_path):
+    # Get the DPI of the image
+    with Image.open(image_path) as img:
+        dpi = img.info.get('dpi', (72, 72))  # Default to (72, 72) if DPI info is not available
+        return dpi
+    
 def extract_angle_from_filename(filename):
     # Extract the angle from the filename (e.g., "*_90.png" -> 90)
     filename = os.path.splitext(filename)[0]
@@ -15,6 +23,13 @@ def rotate_image(image, angle):
     center = (w // 2, h // 2)
     rotation_matrix = cv2.getRotationMatrix2D(center, -angle, 1.0)
     return cv2.warpAffine(image, rotation_matrix, (w, h))
+
+def crop_edges(image, crop_size=2, dpi=72):
+    # Crop `crop_size` inches from each edge of the image
+
+    crop_size_pixels = int(crop_size * dpi)  # Convert inches to pixels
+    h, w = image.shape[:2]
+    return image[crop_size:h-crop_size, crop_size:w-crop_size]
 
 def find_bounding_box(image):
     # Convert to grayscale and threshold to find the object
@@ -45,6 +60,9 @@ def main():
             if image is None:
                 print(f"Error: Unable to read {filepath}")
                 sys.exit(1)
+            
+            dpi = get_image_dpi(filepath)[0]
+            image = crop_edges(image, crop_size=2, dpi=dpi)
             angle = extract_angle_from_filename(filename)
             images.append((image, angle))
             angles.append(angle)
