@@ -67,7 +67,7 @@ def main():
     output_dir = os.path.join(input_dir, "aligned")
     os.makedirs(output_dir, exist_ok=True)
     for _, (cropped, (_, angle)) in enumerate(zip(cropped_images, images)):
-        output_path = os.path.join(output_dir, f"{angle}.png")
+        output_path = os.path.join(output_dir, f"aligned_{angle}.png")
         cv2.imwrite(output_path, cropped)
 
     print(f"Aligned images saved to {output_dir}")

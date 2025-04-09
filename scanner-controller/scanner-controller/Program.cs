@@ -28,7 +28,6 @@ class Program
                     Console.WriteLine("Invalid DPI value. Defaulting to 100.");
                     dpi = 100;
                 }
-                Console.WriteLine("The first argument is: " + dpi);
             }
 
         ScanningContext scanningContext;

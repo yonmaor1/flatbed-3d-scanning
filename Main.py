@@ -63,9 +63,27 @@ def run_scan(num, path, dpi):
     # go to this scan folder
     os.chdir(path)
 
+    # align scans
+    print("Running align.py")
+    subprocess.run("python align.py scanner-controller/scanner-controller/scans/scan" + str(scanID))
+
     # call normal_map.py from the command line
     print("Running normal_map.py")
-    os.system("python normal_map.py --i scanner-controller/scanner-controller/scans/scan" + str(scanID) + " --o scanner-controller/scanner-controller/scans/scan" + str(scanID) + "/normal_map"+ ".png")
+    subprocess.run("python normal_map.py --i scanner-controller/scanner-controller/scans/scan" + str(scanID) + "/aligned --o scanner-controller/scanner-controller/scans/scan" + str(scanID) + "/normal_map"+ ".png")
+
+    # check if normal map was created
+    if not os.path.exists("scanner-controller/scanner-controller/scans/scan" + str(scanID) + "/normal_map.png"):
+        print("Normal map creation failed.")
+        return 0
+    
+    normal_map_path = f"scanner-controller/scanner-controller/scans/scan{scanID}/normal_map.png"
+    height_map_path = f"scanner-controller/scanner-controller/scans/scan{scanID}/height_map.png"
+
+    # convert normal map to height map
+    print("Running normal_to_height.py")
+    subprocess.run([
+        "python", "normal_to_height.py", normal_map_path, height_map_path, "--seamless", "FALSE"
+    ], check=True)
 
     return 1
 
