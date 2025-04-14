@@ -4,6 +4,13 @@ from PIL import Image
 import os
 import sys
 
+def get_arithmetic_mean(images):
+    # Calculate the arithmetic mean of an array of images
+    return np.mean(images, axis=0)
+
+def get_arithmetic_std(images):
+    # Calculate the standard deviation of an array of images
+    return np.std(images, axis=0)
 
 def get_image_dpi(image_path):
     # Get the DPI of the image
@@ -64,12 +71,13 @@ def main():
             dpi = get_image_dpi(filepath)[0]
             image = crop_edges(image, crop_size=2, dpi=dpi)
             angle = extract_angle_from_filename(filename)
-            images.append((image, angle))
+            images.append(image)
             angles.append(angle)
 
     # Rotate images back to the orientation of *_0.png
-    rotated_images = [rotate_image(image, angle) for image, angle in images]
+    rotated_images = [rotate_image(image, angle) for image, angle in zip(images, angles)]
 
+    comment = '''
     # Use the first image to determine the bounding box
     bbox = find_bounding_box(rotated_images[0])
     if bbox is None:
@@ -89,6 +97,18 @@ def main():
         cv2.imwrite(output_path, cropped)
 
     print(f"Aligned images saved to {output_dir}")
+
+    '''
+
+    # Calculate the arithmetic mean and standard deviation
+    mean_image = get_arithmetic_mean(images)
+    std_image = get_arithmetic_std(images)
+
+    # Display the mean and standard deviation images
+    cv2.imshow("Mean Image", mean_image.astype(np.uint8))
+    cv2.imshow("Standard Deviation Image", std_image.astype(np.uint8))
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
 if __name__ == "__main__":
     main()
