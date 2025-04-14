@@ -26,6 +26,8 @@ def extract_angle_from_filename(filename):
 
 def rotate_image(image, angle):
     # Rotate the image by the specified angle
+
+    print(angle)
     (h, w) = image.shape[:2]
     center = (w // 2, h // 2)
     rotation_matrix = cv2.getRotationMatrix2D(center, -angle, 1.0)
@@ -47,6 +49,11 @@ def find_bounding_box(image):
         x, y, w, h = cv2.boundingRect(max(contours, key=cv2.contourArea))
         return x, y, w, h
     return None
+
+def crop_by_bounding_box(image, bbox):
+    # Crop the image using the bounding box
+    x, y, w, h = bbox
+    return image[y:y+h, x:x+w]
 
 def main():
     if len(sys.argv) != 2:
@@ -74,41 +81,57 @@ def main():
             images.append(image)
             angles.append(angle)
 
+
+    # Calculate the arithmetic mean and standard deviation
+    # mean_image = get_arithmetic_mean(images) # unused
+    std_image = get_arithmetic_std(images)
+    std_image = 255 - std_image
+    # std_image_normalized = cv2.normalize(std_image, None, 0, 255, cv2.NORM_MINMAX) # unused
+
+
+    # Find the bounding box on the standard deviation image
+    bbox = find_bounding_box(std_image.astype(np.uint8))
+    if bbox is not None:
+        x, y, w, h = bbox
+        # Draw the bounding box on the standard deviation image
+        cv2.rectangle(std_image, (x, y), (x + w, y + h), (255, 0, 0), 2)
+    else:
+        print("Error: Unable to determine bounding box on the standard deviation image.")
+
+    # DEBUG : Display the mean and standard deviation images
+    # cv2.imshow("Mean Image", mean_image.astype(np.uint8))
+    # cv2.imshow("Standard Deviation Image", std_image.astype(np.uint8))
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
+
+    # Crop each image using the bounding box
+    cropped_images = [crop_by_bounding_box(image, bbox) for image in images]
+
     # Rotate images back to the orientation of *_0.png
-    rotated_images = [rotate_image(image, angle) for image, angle in zip(images, angles)]
+    rotated_images = [rotate_image(image, -angle) for image, angle in zip(cropped_images, angles)]
 
-    comment = '''
-    # Use the first image to determine the bounding box
-    bbox = find_bounding_box(rotated_images[0])
-    if bbox is None:
-        print("Error: Unable to determine bounding box.")
-        sys.exit(1)
-
-    x, y, w, h = bbox
-
-    # Crop all images around the bounding box
-    cropped_images = [img[y:y+h, x:x+w] for img in rotated_images]
 
     # Save the cropped images
     output_dir = os.path.join(input_dir, "aligned")
-    os.makedirs(output_dir, exist_ok=True)
-    for _, (cropped, (_, angle)) in enumerate(zip(cropped_images, images)):
+    if os.path.exists(output_dir):
+        overwrite = input(f"Warning: {output_dir} already exists. Overwrite? [y/n]")
+        if overwrite.lower() == 'y':
+            print(f"Overwriting directory: {output_dir}")
+            for filename in os.listdir(output_dir):
+                filepath = os.path.join(output_dir, filename)
+                if os.path.isfile(filepath):
+                    os.remove(filepath)
+        else:
+            print("Exiting without saving.")
+            sys.exit(0)
+    else:
+        print(f"Creating directory: {output_dir}")
+        os.makedirs(output_dir, exist_ok=True)
+    for image, angle in zip(rotated_images, angles):
         output_path = os.path.join(output_dir, f"aligned_{angle}.png")
-        cv2.imwrite(output_path, cropped)
+        cv2.imwrite(output_path, image)
 
     print(f"Aligned images saved to {output_dir}")
-
-    '''
-
-    # Calculate the arithmetic mean and standard deviation
-    mean_image = get_arithmetic_mean(images)
-    std_image = get_arithmetic_std(images)
-
-    # Display the mean and standard deviation images
-    cv2.imshow("Mean Image", mean_image.astype(np.uint8))
-    cv2.imshow("Standard Deviation Image", std_image.astype(np.uint8))
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
 
 if __name__ == "__main__":
     main()
