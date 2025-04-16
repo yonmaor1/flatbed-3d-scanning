@@ -85,6 +85,12 @@ def run_scan(num, path, dpi):
         "python", "normal_to_height.py", normal_map_path, height_map_path, "--seamless", "FALSE"
     ], check=True)
 
+    print("Normal map converted to height map.")
+
+    # create model
+    print("Running height_to_3d.py")
+    subprocess.run("python height_to_3d.py " + str(scanID), shell=True)
+
     return 1
 
 if __name__ == "__main__":
