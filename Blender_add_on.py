@@ -57,21 +57,41 @@ class WMFlatbed3DScan(bpy.types.Operator):
         
         # find most recent scan folder
         scan_folder = "scan0"
+        # sort folders by number and pick highest
         try:
-            for folder in os.listdir(os.path.join(self.path, "scanner-controller", "scanner-controller", "scans")):
-                if folder.startswith("scan"):
-                    scan_folder = folder
+            scans_path = os.path.join(self.path, "scanner-controller", "scanner-controller", "scans")
+            scan_folders = [
+                folder for folder in os.listdir(scans_path)
+                if folder.startswith("scan") and folder[4:].isdigit()
+            ]
+            
+            if scan_folders:
+                scan_folders.sort(key=lambda f: int(f[4:]))
+                scan_folder = scan_folders[-1]
         except:
             print("Scans folder not found.")
 
 
         height_map_path = self.path + "/scanner-controller/scanner-controller/scans/" + str(scan_folder) + "/height_map.png"
         print(f"Height map path: {height_map_path}")
+
+        # load height map
+        height_map = bpy.data.images.load(height_map_path)
             
         # create plane
         # TODO: Add option to change size?
-        bpy.ops.mesh.primitive_plane_add(size=10.00, enter_editmode=False, align='WORLD', location=(0, 0, 0))
+        # find size of height map
+        # Get image width and height
+        img_width = height_map.size[0]
+        img_height = height_map.size[1]
+
+        bpy.ops.mesh.primitive_plane_add(size=1.00, enter_editmode=False, align='WORLD', location=(0, 0, 0))
         plane = bpy.context.active_object # set the active object (the plane)
+
+        # scale plane to match image size
+        scale = 0.1
+        plane.scale.y = img_width * scale / 2  # Plane's original size is 2x2, need to divide by 2
+        plane.scale.x = img_height * scale / 2
 
         # Subdivide it
         bpy.ops.object.mode_set(mode='EDIT')
