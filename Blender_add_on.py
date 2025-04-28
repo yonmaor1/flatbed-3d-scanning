@@ -49,14 +49,60 @@ class WMFlatbed3DScan(bpy.types.Operator):
 
         # call Main.py
         print("Running Main.py")
-        subprocess.run("python Main.py " + str(self.scan_number) + " " + self.path + " " + str(self.dpi))
+        result = subprocess.run(
+            ["python", "Main.py", str(self.scan_number), self.path, str(self.dpi)],
+            stdout=subprocess.PIPE,
+            text=True
+        )
+        
+        # find most recent scan folder
+        scan_folder = "scan0"
+        try:
+            for folder in os.listdir(os.path.join(self.path, "scanner-controller", "scanner-controller", "scans")):
+                if folder.startswith("scan"):
+                    scan_folder = folder
+        except:
+            print("Scans folder not found.")
+
+
+        height_map_path = self.path + "/scanner-controller/scanner-controller/scans/" + str(scan_folder) + "/height_map.png"
+        print(f"Height map path: {height_map_path}")
+            
+        # create plane
+        # TODO: Add option to change size?
+        bpy.ops.mesh.primitive_plane_add(size=10.00, enter_editmode=False, align='WORLD', location=(0, 0, 0))
+        plane = bpy.context.active_object # set the active object (the plane)
+
+        # Subdivide it
+        bpy.ops.object.mode_set(mode='EDIT')
+        # Number of subdivisions is based on the DPI, may need to change?
+        bpy.ops.mesh.subdivide(number_cuts=self.dpi)
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        # unwrap so texture doesn't repeat
+        bpy.ops.object.mode_set(mode='EDIT')
+        bpy.ops.uv.unwrap(method='ANGLE_BASED', margin=0.001)
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+        # subdivision Surface modifier to smooth
+        subd = plane.modifiers.new(name='Subdivision', type='SUBSURF')
+        subd.levels = 2
+        subd.render_levels = 2
+        subd.subdivision_type = 'SIMPLE'
+
+        # add displace with texture of image type
+        displace = plane.modifiers.new(name='Displace', type='DISPLACE')
+        texture = bpy.data.textures.new(name="HeightMapTex", type='IMAGE')
+
+        texture.image = bpy.data.images.load(height_map_path)
+        displace.texture = texture
+        displace.strength = 0.4 # TODO: Add option to change?
+        # might need to be LOCAL instead of UV?
+        displace.texture_coords = 'UV'
 
         print("Scan successful.")
 
         return {'FINISHED'}        # Lets Blender know the operator finished successfully.
-        # else:
-        #     print("Scan unsuccessful.")
-        #     return {'CANCELLED'}       # Lets Blender know the operator was cancelled.
 
     def invoke(self, context, event):
         # This is called when the operator is invoked.

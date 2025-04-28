@@ -88,13 +88,16 @@ def run_scan(num, path, dpi):
     print("Normal map converted to height map.")
 
     # create model
-    print("Running height_to_3d.py")
-    subprocess.run("python height_to_3d.py " + str(scanID), shell=True)
+    # print("Running height_to_3d.py")
+    # subprocess.run("python height_to_3d.py " + str(scanID), shell=True)
 
-    return 1
+    print(scanID)
+
+    # return scanID
 
 if __name__ == "__main__":
   num = int(sys.argv[1])
   path = sys.argv[2]
   dpi = int(sys.argv[3])
-  run_scan(num, path, dpi)
+  scanID = run_scan(num, path, dpi)
+  print(scanID)
