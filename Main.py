@@ -35,6 +35,8 @@ def run_scan(num, path, dpi):
     # TODO: add option to change/find port
     esp = serial.Serial(port='COM14', baudrate=9600, timeout=0.1)
 
+    write_read('d', esp) # suction
+
     # loop through number of scans requested
     for i in range(num):
         
@@ -47,12 +49,13 @@ def run_scan(num, path, dpi):
         print("Scan", i+1, "of", num, "complete.")
 
         # TODO: implement try catch
-        write_read('d', esp) # suction
+        
         time.sleep(0.1)
         write_read('a', esp) # rotation
         time.sleep(0.05)
-        write_read('e', esp)
         print("Finished rotation")
+
+    write_read('e', esp) # turn off suction
 
     time.sleep(0.5)
     write_read('b', esp) # rotate back
