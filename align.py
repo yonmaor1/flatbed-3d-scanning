@@ -202,8 +202,8 @@ def main():
     # cv2.destroyAllWindows()
     # Save the standard deviation image for debugging purposes
     std_image_path = os.path.join(f"{input_dir}/", "std_image.png")
-    cv2.imwrite(std_image_path, std_image.astype(np.uint8))
-    print(f"Standard deviation image saved to {std_image_path}")
+    # cv2.imwrite(std_image_path, std_image.astype(np.uint8)) # DEBUG
+    # print(f"Standard deviation image saved to {std_image_path}")
 
     # Crop each image using the bounding box
     cropped_images = [crop_by_bounding_box(image, bbox) for image in images]
