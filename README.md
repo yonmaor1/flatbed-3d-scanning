@@ -23,3 +23,17 @@ https://onlinelibrary.wiley.com/doi/epdf/10.1111/1467-8659.00236
 
 # TODO
 - everything
+
+# Notes
+
+## (yon) alignment refinement algorithm:
+given the rectangular bounding box (x, y, w, h) from the std approach:
+1. find the two possible square bounding boxes (with side lengths max(w, h), min(w, h))
+2. for each square there are 4 possible orientations, each aligns an edge of the new bounding box with an edge of the old bounding box. Ie, align the left adge of the new bounding box with the left edge of the old bounding box, or the top edges, etc. This gives 8 possible bounding boxes.
+3. for each bounding box, find the ratio of color density inside and outside the bounding box. A higher number implies more of the image is inside the bounding box
+4. select the bounding box with the highest inside:outside density ratio
+
+alternative selection steps:
+
+3. for each bounding box, split the box into 4 quadrants and measure the mean difference in color density across the four quadrants
+4. pick the bounding box with the smallest variation in density difference across its four corners

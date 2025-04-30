@@ -1,4 +1,4 @@
-from depth_from_normals.height_map import (
+from depth_from_normals.height_map_yon import (
     estimate_height_map,
 )  # Local file 'height_map.py' in this repository.
 from matplotlib import pyplot as plt
